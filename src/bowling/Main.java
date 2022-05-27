@@ -31,6 +31,7 @@ public class Main {
         }else{
             System.out.println(p2.name + "の勝ち");
         }
+        System.out.println("ゲーム終了");
     }
 }
 
