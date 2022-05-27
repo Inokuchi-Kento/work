@@ -3,10 +3,11 @@ package bowling;
 public class ScoreCounter {
     int down;
 
-    public void score(int flame, Player p) {
+    public void score(int flame, Player p){
         int pin = 10;
         /* 1回目の投球 */
-        down = p.play();
+        //down = p.play();
+        new java.util.Random().nextInt(11);
         p.first[flame] = down;
 
         if(flame > 0 && (p.strike[flame-1] == true || p.spare[flame - 1] == true)){ //前回がスペアorストライク
@@ -15,8 +16,8 @@ public class ScoreCounter {
         pin -= down;//1回目の投球終了後のピンの残り本数
 
         /* ストライク以外の場合は2回目の投球 */
-        if(pin != 0) {
-            down = p.play();
+        if(pin != 0){
+            down = new java.util.Random().nextInt(pin+1);
             p.second[flame] = down;
 
             if(flame > 0 && p.strike[flame - 1] == true){ //前フレームがストライクだった場合
@@ -37,10 +38,10 @@ public class ScoreCounter {
     }
 
     /* 10フレーム目の処理 */
-    public void lastFlame(int flame, int pin, Player p) {
+    public void lastFlame(int flame, int pin, Player p){
         if(flame == 9 && pin == 0){
             pin = 10;
-            down = p.play();
+            down = new java.util.Random().nextInt(pin+1);
             pin -= down;
 
             /* 10フレーム目がスペアなので3投目 */
@@ -54,7 +55,8 @@ public class ScoreCounter {
                 }
                 p.point[flame] += down;
                 if(pin == 0){ //2投目もストライク
-                    down = p.play();
+                    down = new java.util.Random().nextInt(11);
+                    p.third = down;
                     p.point[flame] += down ;
                 }
             }

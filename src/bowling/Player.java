@@ -5,6 +5,7 @@ public class Player {
     int[] point = new int[10];
     int[] first = new int[10];
     int[] second = new int[10];
+    int third;
     int sum;
 
     int control;
@@ -19,6 +20,7 @@ public class Player {
         this.luck = luck;
     }
 
+    /*
     public int play(){
         int total = 0;
         double n = (double) (new java.util.Random().nextInt(luck))/150;
@@ -28,5 +30,5 @@ public class Player {
             total = 10;
         }
         return total;
-    }
+    }*/
 }
