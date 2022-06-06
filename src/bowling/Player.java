@@ -8,11 +8,11 @@ public class Player {
     int third;
     int sum;
 
-    int control;
-    int luck;
-
     boolean[] strike = new boolean[10];
     boolean[] spare = new boolean[10];
+
+    int control;
+    int luck;
 
     public Player(String name, int control, int luck){
         this.name = name;
@@ -20,7 +20,6 @@ public class Player {
         this.luck = luck;
     }
 
-    /*
     public int play(){
         int total = 0;
         double n = (double) (new java.util.Random().nextInt(luck))/150;
@@ -30,5 +29,5 @@ public class Player {
             total = 10;
         }
         return total;
-    }*/
+    }
 }

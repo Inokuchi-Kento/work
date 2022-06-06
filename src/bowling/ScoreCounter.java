@@ -41,6 +41,7 @@ public class ScoreCounter {
     public void lastFlame(int flame, int pin, Player p){
         if(flame == 9 && pin == 0){
             pin = 10;
+            //2投目
             down = new java.util.Random().nextInt(pin+1);
             pin -= down;
 
@@ -51,6 +52,7 @@ public class ScoreCounter {
             if (p.strike[flame] == true){ //一頭目で10の場合
                 //2投目
                 if(p.strike[flame - 1] == true){
+                    p.second[flame] = down;
                     p.point[flame - 1] += down; //9フレーム目がストライクだった場合
                 }
                 p.point[flame] += down;
