@@ -1,12 +1,12 @@
 package bowling;
 
 public class Board {
-    public Board(){
+    public Board() {
         System.out.println("-------------------------------------------------------------------------------------------------------");
         System.out.println("    |  1 |  2 |  3 |  4 |  5 |  6 |  7 |  8 |  9 | 10 |");
     }
 
-    public void board(Player p){
+    public void board(Player p) {
         p.sum = 0;
         System.out.print("     ");
         for(int i = 0; i < 10; i++) {

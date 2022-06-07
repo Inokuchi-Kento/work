@@ -3,7 +3,7 @@ package bowling;
 public class ScoreCounter {
     int down;
 
-    public void score(int flame, Player p){
+    public void score(int flame, Player p) {
         int pin = 10;
         /* 1回目の投球 */
         down = p.play();
@@ -15,7 +15,7 @@ public class ScoreCounter {
         pin -= down;//1回目の投球終了後のピンの残り本数
 
         /* ストライク以外の場合は2回目の投球 */
-        if(pin != 0){
+        if(pin != 0) {
             down = p.play();
             p.second[flame] = down;
 
@@ -37,7 +37,7 @@ public class ScoreCounter {
     }
 
     /* 10フレーム目の処理 */
-    public void lastFlame(int flame, int pin, Player p){
+    public void lastFlame(int flame, int pin, Player p) {
         if(flame == 9 && pin == 0){
             pin = 10;
             down = p.play();
